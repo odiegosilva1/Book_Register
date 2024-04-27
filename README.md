@@ -1,120 +1,59 @@
-# api_books
 
-### Descrição
+---
 
-A api_books foi criada para o armazenamento de livros de sua preferencia, sendo assim, você tem total controle para criar, editar, alterar e/ou excluir livros. 
-- As alterações não são permanentes
+# Cadastro de Livros - Aplicação Web
 
-### Recursos
+![GitHub](https://github.com/odiegosilva1/Book_Register)
 
-No momento a api_books está disponibilizando 3 livros para consulta.
+Uma aplicação web simples para gerenciar o cadastro de livros.
 
-### Retornar todos os livros (GET)
+## Funcionalidades
 
-- http://localhost:5000/books
+- Adicionar um novo livro com título, autor e gênero
+- Editar informações de um livro existente
+- Excluir um livro da lista
 
-Exemplo de consulta 
-```python
-request = requests.get('http://localhost:5000/books')
-print(request.json())
-```
-Retorno
-- Retorna uma lista de todos os livros da api em formato json
+## Tecnologias Utilizadas
 
-```python
-[{'author': 'Max Fisher', 'id': 1, 'title': 'A máquina do caos'}, {'author': 'Bill Gates', 'id': 2, 'title': 'A estrada do futuro'}, {'author': 'Jeanine Cummins', 'id': 3, 'title': 'Terra Americana'}]
-```
+- **Flask**: Framework web em Python para o backend
+- **Bootstrap**: Framework CSS para o frontend
+- **SQLite**: Banco de dados leve para armazenar os dados da aplicação
 
-### Retornar um livro (GET)
-- Para cada id(livro) que você acessa com o método GET, é retornado o id, nome do autor e o título do livro.
-- Use id de 1 a 3
-- http://localhost:5000/books/{id}
+## Instalação
 
-exemplo de consulta por id
-```python
-request = requests.get(f"http://localhost:5000/books/{id}")
-print(request.json())
-```
+1. Clone o repositório:
 
-### Fazer alterações (PUT)
-- Não esqueça de específicar o livro que você deseja alterar. Para fazer isso basca acrescentar o número do id do livro na rota.
-- http://localhost:5000/books/{id}
+   ```bash
+   git clone https://github.com/odiegosilva1/Book_Register.git
+   ```
 
-Exemplo de alteração por id
-```python
-book = {"author": "Max Fisher", "id": 1, "title": "A Máquina do Caos"}
-request = requests.put(f"http://localhost:5000/books/{id}", json=book)
-print(request.json())
-```
+2. Instale as dependências:
 
-Retorno
-```python
-{'author': 'Max Fisher', 'id': 1, 'title': 'A Máquina do Caos'}
-```
+   ```bash
+   pip install -r 
+   ```
 
-### Para criar um livro (POST)
-- http://localhost:5000/books
+3. Execute a aplicação:
 
-Exemplo de criação de um livro
-```python
-book = {"id": 4, "autor": "Yuval Noah", "title": "Sapiens"}
-create = requests.post("http://localhost:5000/books", json=book)
-print(create)
-```
+   ```bash
+   python main.py
+   ```
 
-Retorno
-- O código HTTP 200 quer dizer que a requisição foi feita com sucesso.
+   Acesse a aplicação em [http://localhost:5000](http://localhost:5000) no seu navegador.
 
-```python
-<Response 200>
-```
- 
-### Para deletar um livro (DELETE)
-- http://localhost:5000/books/{id}
+## Estrutura do Projeto
 
-Exempo de exclusão de um livro
-```python
-delete = requests.delete(f"http://localhost:5000/books/{id}")
-print(delete)
-```
+- **app.py**: Arquivo principal da aplicação Flask
+- **templates/**: Pasta contendo os arquivos HTML para as views da aplicação
+- **static/**: Pasta contendo arquivos estáticos como CSS, JavaScript e imagens
+- **database.db**: Banco de dados SQLite para armazenar os dados dos livros
 
-Retorno
-```python
-<Response 200>
-```
+## Contribuição
 
-## Para executar essa API é preciso clonar esse repositório.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir um pull request ou relatar um problema.
 
-Copie a URL do repositório
+## Licença
 
-```git
-https://github.com/crija/api_books.git 
-```
+Este projeto está licenciado sob a [Licença MIT](LICENSE).
 
-No terminal do rode o seguinte comando
-- Comando do git para clonar e a URL para especificar qual repositório você deseja clonar na sua máquina
-
-```git
-git clone https://github.com/crija/api_books.git
-```
-
-Baixar dependências
-
-1. Instalar o python na verção 3.11.3
-2. Instalar Flask na versção 2.0.1
-
-Com a api na sua máquina e todas as dependências devidamente baixadas, você vai rodar a api com o seguinte comando
-
-```python
-python app.py
-```
-
-Pronto! Agora você está livre para fazer consultas e alterações que desejar.
-
-
-
-
-
-
-
-
+---
