@@ -1,11 +1,12 @@
 from flask import Blueprint, render_template
+from database.books_db import BOOKS
 
 books_route = Blueprint('books', __name__)
 
 # Lista os Livros
 @books_route.route('/')
 def book_list():
-   return render_template('book_list.html')
+   return render_template('book_list.html', books=BOOKS)
 
 # Cadastra Livro
 @books_route.route('/', methods=['POST'] )

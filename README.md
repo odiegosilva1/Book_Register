@@ -43,7 +43,7 @@ Uma aplicação web simples para gerenciar o cadastro de livros.
 
 ## Estrutura do Projeto
 
-- **app.py**: Arquivo principal da aplicação Flask
+- **main.py**: Arquivo principal da aplicação Flask
 - **templates/**: Pasta contendo os arquivos HTML para as views da aplicação
 - **static/**: Pasta contendo arquivos estáticos como CSS, JavaScript e imagens
 - **database.db**: Banco de dados SQLite para armazenar os dados dos livros
